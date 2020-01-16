@@ -1,12 +1,13 @@
-import React from "react";
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
-} from "react-router-dom";
-import "./App.scss";
-import { Home } from "./containers"
+  Link,
+} from 'react-router-dom';
+import './App.scss';
+import { Main } from './containers';
+
 export default function App() {
   return (
     <Router>
@@ -25,27 +26,12 @@ export default function App() {
           </ul>
         </nav>
         <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
+
           <Route path="/">
-            <Home />
+            <Main />
           </Route>
         </Switch>
       </div>
     </Router>
   );
-}
-
-
-
-function About() {
-  return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
 }
