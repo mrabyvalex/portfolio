@@ -1,6 +1,6 @@
 import { TOGGLE_LOADING } from './constants';
 
-export default (state = {}, action) => {
+export default (state = { loading: false }, action) => {
   switch (action.type) {
     case TOGGLE_LOADING:
       return { ...state, loading: !state.loading };
