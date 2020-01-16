@@ -1,7 +1,12 @@
 {
   "extends": "airbnb",
-"rules": {
+  "rules": {
     "func-names": ["error", "never"],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    "react/jsx-filename-extension": "off",
+    "import/prefer-default-export": 0,
+    "import/named": "off",
+    "no-unused-vars": "off",
+    "react/prop-types": "off",
+    "quotes": [2, "double", { "avoidEscape": true }]
   }
 }

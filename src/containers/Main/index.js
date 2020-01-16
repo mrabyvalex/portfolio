@@ -1,10 +1,8 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
-import React from 'react';
-import { withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
-import { rootActions } from '../../store';
+import React from "react";
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import { compose } from "redux";
+import { rootActions } from "../../store";
 
 const Main = ({ location, ...otherprops }) => {
   console.log(otherprops);
@@ -18,12 +16,6 @@ const Main = ({ location, ...otherprops }) => {
 
 const mapDispatchToProps = rootActions;
 const mapStateToProps = (state) => ({ ...state });
-const withConnect = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-);
+const withConnect = connect(mapStateToProps, mapDispatchToProps);
 
-export default compose(
-  withRouter,
-  withConnect,
-)(Main);
+export default compose(withRouter, withConnect)(Main);

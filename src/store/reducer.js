@@ -1,4 +1,4 @@
-import { TOGGLE_LOADING } from './constants';
+import { TOGGLE_LOADING } from "./constants";
 
 export default (state = { loading: false }, action) => {
   switch (action.type) {

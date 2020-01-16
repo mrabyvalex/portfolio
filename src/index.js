@@ -1,14 +1,14 @@
 /* eslint-disable no-undef */
-import React from 'react';
-import ReactDOM from 'react-dom';
-import createSagaMiddleware from 'redux-saga';
-import { createStore, applyMiddleware } from 'redux';
-import { Provider } from 'react-redux';
-import { logger } from 'redux-logger';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
-import { rootSaga, rootReducer } from './store';
+import React from "react";
+import ReactDOM from "react-dom";
+import createSagaMiddleware from "redux-saga";
+import { createStore, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
+import { logger } from "redux-logger";
+import "./index.css";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
+import { rootSaga, rootReducer } from "./store";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -19,7 +19,7 @@ ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root'),
+  document.getElementById("root"),
 );
 
 // If you want your app to work offline and load faster, you can change

@@ -1,6 +1,6 @@
-import * as rootActions from './actions';
+import * as rootActions from "./actions";
 
-export { default as rootSaga } from './saga';
-export { default as rootReducer } from './reducer';
+export { default as rootSaga } from "./saga";
+export { default as rootReducer } from "./reducer";
 
 export { rootActions };
