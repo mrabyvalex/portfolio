@@ -1,12 +1,24 @@
 {
-  "extends": "airbnb",
+  "extends": [
+    "react-app",
+    "airbnb",
+    "plugin:jsx-a11y/recommended",
+    "prettier",
+    "prettier/react"
+  ],
+  "plugins": ["jsx-a11y", "prettier"],
   "rules": {
-    "func-names": ["error", "never"],
-    "react/jsx-filename-extension": "off",
+    "react/prop-types": 0,
     "import/prefer-default-export": 0,
-    "import/named": "off",
-    "no-unused-vars": "off",
-    "react/prop-types": "off",
-    "quotes": [2, "double", { "avoidEscape": true }]
+    "no-unused-vars": 0,
+    "import/named": 0,
+    "semi": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "prettier/prettier": [
+      "error",
+      {
+        "semi": false
+      }
+    ]
   }
 }
