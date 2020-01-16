@@ -80,7 +80,7 @@
     "build:app": "node scripts/build.js",
     "test:app": "node scripts/test.js",
     "start:lambda": "NODE_ENV=development netlify-lambda serve src/lambda",
-    "build:lambda": "netlify-lambda build src/lambda",
+    "build:lambda": "NODE_ENV=production netlify-lambda build src/lambda",
     "lint": "eslint ./src/**/*.{js,jsx} --quiet --ignore-path .gitignore",
     "lint:fix": "eslint ./src/**/*.{js,jsx} --fix --quiet --ignore-path .gitignore "
   },
