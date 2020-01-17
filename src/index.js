@@ -9,18 +9,20 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { rootSaga, rootReducer } from './store';
-import { PcreateTheme, PThemeProvider } from './atoms';
-import { APP_THEME } from './constants';
+import { PcreateTheme, PThemeProvider, PCssBaseline } from './atoms';
+import { APP_THEME_LIGHT, APP_THEME_LIGHT_DARK, SUNSET_TIME } from './constants';
+import { DateUtil } from './utils';
 
 const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(rootReducer, applyMiddleware(sagaMiddleware, logger));
 
 sagaMiddleware.run(rootSaga);
-const theme = PcreateTheme(APP_THEME);
+const theme = PcreateTheme(DateUtil.checkIfPastTime(...SUNSET_TIME) ? APP_THEME_LIGHT_DARK : APP_THEME_LIGHT);
 ReactDOM.render(
   <Provider store={store}>
     <PThemeProvider theme={theme}>
+      <PCssBaseline />
       <App />
     </PThemeProvider>
   </Provider>,

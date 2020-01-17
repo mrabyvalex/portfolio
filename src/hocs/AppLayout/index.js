@@ -5,7 +5,7 @@ import MobileHeader from '../../components/MobileHeader';
 
 const useStyles = PmakeStyles((theme) => ({
   root: {
-    marginTop: 64
+    marginTop: 80
   }
 }));
 export default (WrappedComponent) => (props) => {

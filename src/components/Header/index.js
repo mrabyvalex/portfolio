@@ -21,7 +21,7 @@ export default ({ headerData, history }) => {
             {headerData.title}
           </PTypography>
           {headerData.menu.map((item) => (
-            <PButton color='inherit' onClick={() => onMenuClick(item.value)}>
+            <PButton key={item.value} color='inherit' onClick={() => onMenuClick(item.value)}>
               {item.label}
             </PButton>
           ))}

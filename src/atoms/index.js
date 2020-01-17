@@ -1,3 +1,5 @@
+import CssBaseline from '@material-ui/core/CssBaseline';
+
 export { default as PAppBar } from './AppBar';
 export { default as PTypography } from './Typography';
 export { default as PSlide } from './Slide';
@@ -11,3 +13,4 @@ export { default as PmakeStyles } from './MakeStyles';
 export { default as PContainer } from './Container';
 export { default as PIcons } from './Icons';
 export { default as PSpeedDialAction } from './SpeedDialAction';
+export const PCssBaseline = CssBaseline;
