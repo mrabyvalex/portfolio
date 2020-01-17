@@ -1,6 +1,7 @@
 import React from 'react';
 import { Header } from '../../components';
 import { PContainer, PmakeStyles } from '../../atoms';
+import MobileHeader from '../../components/MobileHeader';
 
 const useStyles = PmakeStyles((theme) => ({
   root: {
@@ -15,6 +16,7 @@ export default (WrappedComponent) => (props) => {
       <PContainer className={classes.root} maxWidth='false'>
         <WrappedComponent {...props} />
       </PContainer>
+      <MobileHeader {...props} />
     </div>
   );
 };
