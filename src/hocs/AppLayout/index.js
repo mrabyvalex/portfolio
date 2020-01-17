@@ -4,7 +4,7 @@ import { Header } from '../../components';
 export default (WrappedComponent) => (props) => {
   return (
     <div className='test'>
-      <Header />
+      <Header {...props} />
       <WrappedComponent {...props} />
     </div>
   );
