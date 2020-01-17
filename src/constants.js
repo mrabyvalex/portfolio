@@ -33,4 +33,4 @@ export const APP_THEME_LIGHT_DARK = {
   }
 };
 
-export const SUNSET_TIME = [18, 0];
+export const SUNSET_TIME = [17, 0];
