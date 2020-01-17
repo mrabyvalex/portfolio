@@ -6,13 +6,8 @@
     "import/prefer-default-export": 0,
     "no-unused-vars": 0,
     "import/named": 0,
-    "semi": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "prettier/prettier": [
-      "error",
-      {
-        "semi": false
-      }
-    ]
+    "semi": [2, "always"],
+    "react/jsx-props-no-spreading": 0
   }
 }
