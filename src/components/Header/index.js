@@ -1,9 +1,8 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { PAppBar, PTypography, PButton, PToolbar } from '../../atoms';
+import { PAppBar, PTypography, PButton, PToolbar, PmakeStyles } from '../../atoms';
 import { HideOnScroll } from '../../compounds';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = PmakeStyles((theme) => ({
   root: {
     padding: 0
   },

@@ -7,3 +7,5 @@ export { default as PcreateTheme } from './CreateTheme';
 export { default as PButton } from './Button';
 export { default as PToolbar } from './ToolBar';
 export { default as PSpeedDial } from './SpeedDial';
+export { default as PmakeStyles } from './MakeStyles';
+export { default as PContainer } from './Container';
