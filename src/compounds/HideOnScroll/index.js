@@ -1,7 +1,7 @@
 import React from 'react';
 import { PuseScrollTrigger, PSlide } from '../../atoms';
 
-export default (props) => {
+const HideOnScroll = (props) => {
   const { children, window, direction } = props;
   // Note that you normally won't need to set the window ref as useScrollTrigger
   // will default to window.
@@ -14,3 +14,8 @@ export default (props) => {
     </PSlide>
   );
 };
+HideOnScroll.defaultProps = {
+  direction: 'down'
+};
+
+export default HideOnScroll;

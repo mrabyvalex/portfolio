@@ -6,3 +6,4 @@ export { default as PThemeProvider } from './ThemeProvider';
 export { default as PcreateTheme } from './CreateTheme';
 export { default as PButton } from './Button';
 export { default as PToolbar } from './ToolBar';
+export { default as PSpeedDial } from './SpeedDial';
