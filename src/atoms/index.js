@@ -10,6 +10,8 @@ import SpeedDial from '@material-ui/lab/SpeedDial';
 import Container from '@material-ui/core/Container';
 import * as Icons from '@material-ui/icons';
 import SpeedDialAction from '@material-ui/lab/SpeedDialAction';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 
 export const PCssBaseline = CssBaseline;
 export const PAppBar = AppBar;
@@ -25,3 +27,5 @@ export const PmakeStyles = makeStyles;
 export const PContainer = Container;
 export const PIcons = Icons;
 export const PSpeedDialAction = SpeedDialAction;
+export const PSnackbar = Snackbar;
+export const PMuiAlert = MuiAlert;

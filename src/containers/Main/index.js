@@ -4,8 +4,9 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { rootActions } from '../../store';
 import { ImageUpload, Toastr, AppLayout } from '../../compounds';
+import { PButton } from '../../atoms';
 
-const Main = ({ location, ...otherprops }) => {
+const Main = ({ location, openToastr, ...otherprops }) => {
   console.log(otherprops);
   return (
     <div>
@@ -14,7 +15,7 @@ const Main = ({ location, ...otherprops }) => {
         {JSON.stringify(location)}
       </h2>
       <ImageUpload />
-      <Toastr />
+      <PButton onClick={() => openToastr()}>Open Toastr</PButton>
     </div>
   );
 };
@@ -23,4 +24,4 @@ const mapDispatchToProps = rootActions;
 const mapStateToProps = (state) => ({ ...state });
 const withConnect = connect(mapStateToProps, mapDispatchToProps);
 
-export default compose(withRouter, withConnect, AppLayout)(Main);
+export default compose(withRouter, withConnect, AppLayout, Toastr)(Main);
