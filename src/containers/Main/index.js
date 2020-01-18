@@ -4,14 +4,18 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { rootActions } from '../../store';
 import { AppLayoutHOC } from '../../hocs';
+import { ImageUpload } from '../../compounds';
 
 const Main = ({ location, ...otherprops }) => {
   console.log(otherprops);
   return (
-    <h2>
-      Main
-      {JSON.stringify(location)}
-    </h2>
+    <div>
+      <h2>
+        Main
+        {JSON.stringify(location)}
+      </h2>
+      <ImageUpload />
+    </div>
   );
 };
 

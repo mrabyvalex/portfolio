@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import createSagaMiddleware from 'redux-saga';

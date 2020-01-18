@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import { put, takeLatest } from 'redux-saga/effects';
 import { dataReceived } from './actions';
 import { TOGGLE_LOADING_ACTION } from './constants';

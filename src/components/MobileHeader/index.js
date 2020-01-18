@@ -19,7 +19,7 @@ export default ({ headerData, window, history }) => {
     <PSpeedDial className={classes.root} ariaLabel='SpeedDial example' hidden={trigger} icon={<PIcons.Menu openIcon={<PIcons.Close />} />} onClose={toggleSpeedial} onOpen={toggleSpeedial} open={open} direction='up'>
       {headerData.menu.map((action) => {
         const RenderIcon = PIcons[action.icon] || PIcons.Menu;
-        return <PSpeedDialAction key={action.label} tooltipOpen icon={<RenderIcon />} tooltipTitle={action.label} onClick={onMenuItemClick(action.value)} />;
+        return <PSpeedDialAction key={action.label} tooltipOpen icon={<RenderIcon color='secondary' />} tooltipTitle={action.label} onClick={onMenuItemClick(action.value)} />;
       })}
     </PSpeedDial>
   );
