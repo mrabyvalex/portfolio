@@ -1,6 +1,6 @@
 import React from 'react';
 import { PAppBar, PTypography, PButton, PToolbar, PmakeStyles } from '../../atoms';
-import { HideOnScroll } from '../../compounds';
+import { HideOnScroll } from '../../molecules';
 
 const useStyles = PmakeStyles((theme) => ({
   root: {

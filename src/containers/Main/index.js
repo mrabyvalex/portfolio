@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { rootActions } from '../../store';
-import { ImageUpload, Toastr, AppLayout } from '../../compounds';
+import { ImageUpload, Toastr, AppLayout } from '../../molecules';
 import { PButton } from '../../atoms';
 
 const Main = ({ location, openToastr, ...otherprops }) => {
