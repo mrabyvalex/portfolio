@@ -2,8 +2,7 @@ import mongoose from 'mongoose';
 
 require('dotenv').config();
 
-const dbUrl = process.env.REACT_APP_MONGO_URL;
-mongoose.connect(dbUrl, { useNewUrlParser: true });
+mongoose.connect(process.env.REACT_APP_MONGO_URL, { useNewUrlParser: true });
 const db = mongoose.connection;
 db.on('success', () => {
   console.log('coneection established');

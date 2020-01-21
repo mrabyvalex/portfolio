@@ -1,4 +1,5 @@
 import React from 'react';
+import get from 'lodash.get';
 import { PAppBar, PTypography, PButton, PToolbar, PmakeStyles } from '../../atoms';
 import { HideOnScroll } from '../../molecules';
 
@@ -20,9 +21,9 @@ export default ({ headerData, history }) => {
           <PTypography variant='h6' className={classes.title}>
             {headerData.title}
           </PTypography>
-          {headerData.menu.map((item) => (
-            <PButton key={item.value} color='inherit' onClick={() => onMenuClick(item.value)}>
-              {item.label}
+          {get(headerData, 'entry', []).map((key) => (
+            <PButton key={headerData.renderMap[key].value} color='inherit' onClick={() => onMenuClick(headerData.renderMap[key].value)}>
+              {headerData.renderMap[key].label}
             </PButton>
           ))}
         </PToolbar>

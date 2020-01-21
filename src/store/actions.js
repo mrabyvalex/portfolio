@@ -1,5 +1,5 @@
 import { createAction } from 'redux-actions';
-import { TOGGLE_LOADING_ACTION, DATA_RECEIVED_ACTION } from './constants';
+import { FETCH_HEADER_DATA, UPDATE_HEADER_DATA } from './constants';
 
-export const toggleLoading = createAction(TOGGLE_LOADING_ACTION);
-export const dataReceived = createAction(DATA_RECEIVED_ACTION);
+export const fetchHeaderData = createAction(FETCH_HEADER_DATA);
+export const updateHeaderData = createAction(UPDATE_HEADER_DATA);

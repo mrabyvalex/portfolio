@@ -1,13 +1,13 @@
-import { put, takeLatest } from 'redux-saga/effects';
-import { dataReceived } from './actions';
-import { TOGGLE_LOADING_ACTION } from './constants';
+import { put, takeLatest, call } from 'redux-saga/effects';
+import { updateHeaderData } from './actions';
+import { FETCH_HEADER_DATA } from './constants';
+import { fetchHeaderDataApi } from './api';
 
-function* toggleLoadingSaga() {
-  const json = yield fetch('https://newsapi.org/v1/articles?source=cnn&apiKey=c39a26d9c12f48dba2a5c00e35684ecc').then((response) => response.json());
-
-  yield put(dataReceived(json.articles || [{ error: json.message }]));
+function* fetchHeaderDataSaga() {
+  const json = yield call(fetchHeaderDataApi);
+  yield put(updateHeaderData(json.data));
 }
 
 export default function* rootSaga() {
-  yield takeLatest(TOGGLE_LOADING_ACTION, toggleLoadingSaga);
+  yield takeLatest(FETCH_HEADER_DATA, fetchHeaderDataSaga);
 }

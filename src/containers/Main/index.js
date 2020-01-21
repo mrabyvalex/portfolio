@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
@@ -6,8 +6,11 @@ import { rootActions } from '../../store';
 import { ImageUpload, Toastr, AppLayout } from '../../molecules';
 import { PButton } from '../../atoms';
 
-const Main = ({ location, openToastr, ...otherprops }) => {
+const Main = ({ location, openToastr, fetchHeaderData, ...otherprops }) => {
   console.log(otherprops);
+  useEffect(() => {
+    fetchHeaderData();
+  }, []);
   return (
     <div>
       <h2>
