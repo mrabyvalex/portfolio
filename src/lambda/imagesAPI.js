@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import './server';
-import HeaderModel from './HeaderModel/schema';
+import ImagesModel from './ImagesModel/schema';
 
 exports.handler = async (event, context) => {
   context.callbackWaitsForEmptyEventLoop = false;
@@ -11,11 +11,11 @@ exports.handler = async (event, context) => {
       case 'create':
         {
           const data = JSON.parse(event.body || {});
-          response = await HeaderModel.create({ ...data });
+          response = await ImagesModel.create({ ...data });
         }
         break;
       default:
-        response = await HeaderModel.find();
+        response = await ImagesModel.find();
     }
     return {
       statusCode: 200,
