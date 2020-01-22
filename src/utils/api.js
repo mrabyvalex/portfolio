@@ -14,7 +14,7 @@ export const get = (url) =>
     });
 export const post = (url, body) =>
   axios
-    .get(url, body, HEADERS)
+    .post(url, body, HEADERS)
     .then((d) => d)
     .catch((err) => {
       throw err;

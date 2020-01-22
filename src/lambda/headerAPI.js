@@ -17,7 +17,7 @@ exports.handler = async (event, context) => {
         break;
       default:
         response = await HeaderModel.find();
-        response = TransformUtil.parseDbObjToJSON(response);
+        response = TransformUtil.dbObjToJSON(response);
         response = response[response.length - 1];
     }
     return {
