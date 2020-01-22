@@ -1,11 +1,12 @@
 import mongoose from 'mongoose';
 import './server';
 import HeaderModel from './HeaderModel/schema';
+import { TransformUtil } from '../utils';
 
 exports.handler = async (event, context) => {
   context.callbackWaitsForEmptyEventLoop = false;
   try {
-    let response = { status: 'success' };
+    let response = {};
     console.log('queryparams', event.queryStringParameters);
     switch (event.queryStringParameters.type) {
       case 'create':
@@ -16,6 +17,8 @@ exports.handler = async (event, context) => {
         break;
       default:
         response = await HeaderModel.find();
+        response = TransformUtil.parseDbObjToJSON(response);
+        response = response[response.length - 1];
     }
     return {
       statusCode: 200,
