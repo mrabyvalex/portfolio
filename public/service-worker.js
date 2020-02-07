@@ -12,15 +12,6 @@ const bgSyncPlugin = new workbox.backgroundSync.Plugin('todoQueue', {
 });
 
 workbox.routing.registerRoute(/\.(?:js|css|html)$/, workbox.strategies.networkFirst());
+workbox.routing.registerRoute(/\functions$/, workbox.strategies.networkFirst());
 
 workbox.routing.registerRoute('http://localhost:3000', workbox.strategies.networkFirst());
-
-workbox.routing.registerRoute('http://localhost:8000/todos', workbox.strategies.networkFirst(), 'GET');
-
-workbox.routing.registerRoute(
-  'http://localhost:8000/todos',
-  workbox.strategies.networkFirst({
-    plugins: [bgSyncPlugin]
-  }),
-  'POST'
-);
