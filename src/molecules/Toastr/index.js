@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { PSnackbar, PMuiAlert } from '../../atoms';
+import { DEFAULT_TOASTR_CONFIG } from '../../constants';
+import UseCallBackState from '../UseCallBackState';
 
 function Alert(props) {
   return <PMuiAlert elevation={6} variant='filled' {...props} />;
 }
 
 export default (WrappedComponent) => (props) => {
-  const [open, setOpen] = React.useState(false);
-
-  const handleClick = () => {
-    setOpen(true);
+  const [open, setOpen] = useState(false);
+  const [toastrConfig, updateToastrConfig] = UseCallBackState(DEFAULT_TOASTR_CONFIG);
+  const handleClick = (configs = {}) => {
+    updateToastrConfig(
+      (currentConfig) => ({ ...currentConfig, ...configs }),
+      () => {
+        setOpen(true);
+      }
+    );
   };
 
   const handleClose = (event, reason) => {
@@ -24,9 +31,9 @@ export default (WrappedComponent) => (props) => {
   return (
     <>
       <WrappedComponent {...props} openToastr={handleClick} />
-      <PSnackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity='success'>
-          This is a success message!
+      <PSnackbar open={open} autoHideDuration={toastrConfig.timeout} onClose={handleClose}>
+        <Alert onClose={handleClose} severity={toastrConfig.severity}>
+          {toastrConfig.message}
         </Alert>
       </PSnackbar>
     </>

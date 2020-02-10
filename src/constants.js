@@ -34,3 +34,9 @@ export const APP_THEME_LIGHT_DARK = {
 };
 
 export const SUNSET_TIME = [17, 0];
+
+export const DEFAULT_TOASTR_CONFIG = {
+  timeout: 60000,
+  severity: 'success',
+  message: 'This is a success message!'
+};
