@@ -1,7 +1,6 @@
 import React from 'react';
-import { Header } from '../../components';
+import { Header, MobileHeader } from '../../components';
 import { PContainer, PmakeStyles } from '../../atoms';
-import MobileHeader from '../../components/MobileHeader';
 
 const useStyles = PmakeStyles((theme) => ({
   root: {

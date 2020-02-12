@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { DragDropContext } from 'react-beautiful-dnd';
 import { PmakeStyles } from '../../atoms';
+import { DroppableContainer, DraggableContainer, DummyComponent } from '../../components';
 
 const UseStyles = PmakeStyles({
   container: {
@@ -15,10 +17,22 @@ const UseStyles = PmakeStyles({
 
 export default () => {
   const classes = UseStyles();
+  const [items, updateItems] = useState(['a', 'b', 'c']);
+  const onDragEnd = (result) => console.log('drag result', result);
   return (
     <div className={classes.container}>
-      <div className={classes.menu}>components</div>
-      <div className={classes.layout}>layout</div>
+      <DragDropContext onDragEnd={onDragEnd}>
+        <div className={classes.menu}>
+          <DroppableContainer droppableId='components' type='componentpool'>
+            {items.map((item, index) => (
+              <DraggableContainer draggableId={item} index={index} key={item}>
+                <DummyComponent title={item} />
+              </DraggableContainer>
+            ))}
+          </DroppableContainer>
+        </div>
+        <div className={classes.layout}>layout</div>
+      </DragDropContext>
     </div>
   );
 };
