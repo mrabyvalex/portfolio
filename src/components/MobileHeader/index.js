@@ -6,7 +6,10 @@ const useStyles = PmakeStyles((theme) => ({
   root: {
     position: 'fixed',
     bottom: 50,
-    right: 50
+    right: 50,
+    [theme.breakpoints.up('sm')]: {
+      display: 'none'
+    }
   }
 }));
 export default ({ headerData, window, history }) => {
