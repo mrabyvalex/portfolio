@@ -9,9 +9,10 @@ import { PButton } from '../../atoms';
 import Edit from '../Edit';
 
 const Main = (props) => {
-  const { location, openToastr, fetchHeaderData, ...otherprops } = props;
+  const { location, openToastr, fetchHeaderData, fetchImagesData } = props;
   useEffect(() => {
     fetchHeaderData();
+    fetchImagesData();
   }, []);
   const urlQuery = qs.parse(`${window.location.search || ''}`.replace(/\?/g, ''));
   switch (true) {
