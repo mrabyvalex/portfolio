@@ -12,6 +12,7 @@ exports.handler = async (event, context) => {
         {
           const data = JSON.parse(event.body || {});
           response = await ImagesModel.create({ ...data });
+          response = await ImagesModel.find();
         }
         break;
       default:
