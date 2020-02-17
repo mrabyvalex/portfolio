@@ -31,7 +31,9 @@ export default () => {
             ))}
           </DroppableContainer>
         </div>
-        <div className={classes.layout}>layout</div>
+        <div className={classes.layout}>
+          <DroppableContainer droppableId='layout' type='componentpool' />
+        </div>
       </DragDropContext>
     </div>
   );

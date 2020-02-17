@@ -1,12 +1,21 @@
 import React from 'react';
 import { Draggable } from 'react-beautiful-dnd';
+import { PmakeStyles } from '../../atoms';
 
-export default ({ children, draggableId, key, index }) => (
-  <Draggable draggableId={draggableId} key={key} index={index}>
-    {(provided, snapshot) => (
-      <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-        {children}
-      </div>
-    )}
-  </Draggable>
-);
+const UseStyles = PmakeStyles({
+  container: {
+    width: 'fit-content'
+  }
+});
+export default ({ children, draggableId, key, index }) => {
+  const classes = UseStyles();
+  return (
+    <Draggable draggableId={draggableId} key={key} index={index}>
+      {(provided, snapshot) => (
+        <div className={classes.container} ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+          {children}
+        </div>
+      )}
+    </Draggable>
+  );
+};
