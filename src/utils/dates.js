@@ -7,7 +7,3 @@ export const checkIfPastTime = (hour = 0, minute = 0) => {
 
   return moment().isAfter(dateToCheck);
 };
-
-if (typeof window !== 'undefined') {
-  window.checkIfPastTime = checkIfPastTime;
-}
