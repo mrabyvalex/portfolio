@@ -5,10 +5,10 @@ const INTIAL_STORE_STATE = {
   headerData: {},
   pageData: {
     '/a': {
-      entry: ['1'],
+      entry: ['0'],
       mapping: {},
       nodes: {
-        '1': {
+        '0': {
           title: 'component1',
           index: 0
         }
