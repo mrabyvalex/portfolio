@@ -4,7 +4,7 @@ import { PContainer, PmakeStyles } from '../../atoms';
 
 const useStyles = PmakeStyles((theme) => ({
   root: {
-    marginTop: 80,
+    marginTop: 64,
     minHeight: '200vh',
     padding: 0
   }

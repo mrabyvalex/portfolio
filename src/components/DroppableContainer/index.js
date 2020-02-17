@@ -14,7 +14,7 @@ export default ({ children, droppableId, type }) => {
   return (
     <Droppable droppableId={droppableId} type={type}>
       {(provided, snapshot) => (
-        <div className={classes.container} ref={provided.innerRef} {...provided.droppableProps} style={{ backgroundColor: snapshot.isDraggingOver ? '#ccc' : '#fff' }}>
+        <div className={classes.container} ref={provided.innerRef} {...provided.droppableProps} style={{ backgroundColor: snapshot.isDraggingOver ? '#ccc' : '#e2e2e2' }}>
           {children}
           {provided.placeholder}
         </div>

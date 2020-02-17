@@ -3,14 +3,14 @@ import { DragDropContext } from 'react-beautiful-dnd';
 import { PmakeStyles } from '../../atoms';
 import { DroppableContainer, DraggableContainer, DummyComponent, LayoutRenderer } from '../../components';
 import { deepDiffMapper } from '../../utils/transform';
-import { reorderList } from '../../utils/common';
 
 const UseStyles = PmakeStyles({
   container: {
     display: 'flex'
   },
   menu: {
-    width: '30%'
+    width: '30%',
+    borderRight: '1px solid'
   },
   layout: {
     width: '70%'

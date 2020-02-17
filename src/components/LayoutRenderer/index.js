@@ -1,6 +1,7 @@
 import React from 'react';
 import get from 'lodash.get';
-import { DraggableContainer, DummyComponent } from '..';
+import DraggableContainer from '../DraggableContainer';
+import DummyComponent from '../DummyComponent';
 
 const LayoutRenderer = ({ data }) => {
   const renderElement = (key) => {
