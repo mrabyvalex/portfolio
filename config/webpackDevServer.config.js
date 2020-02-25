@@ -9,6 +9,7 @@ const fs = require('fs');
 
 const protocol = process.env.HTTPS === 'true' ? 'https' : 'http';
 const host = process.env.HOST || '0.0.0.0';
+const LAMBDA_PORT = process.env.LAMBDA_PORT || 9000;
 
 module.exports = function(proxy, allowedHost) {
   return {
@@ -90,7 +91,7 @@ module.exports = function(proxy, allowedHost) {
     before(app, server) {
       if (fs.existsSync(paths.proxySetup)) {
         // This registers user provided middleware for proxy reasons
-        require(paths.proxySetup)(app);
+        require(paths.proxySetup)(app, LAMBDA_PORT);
       }
 
       // This lets us fetch source contents from webpack for the error overlay
