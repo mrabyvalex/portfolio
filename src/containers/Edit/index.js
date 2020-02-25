@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { DragDropContext } from 'react-beautiful-dnd';
+import get from 'lodash.get';
 import { PmakeStyles } from '../../atoms';
 import { DroppableContainer, DraggableContainer, DummyComponent, LayoutRenderer } from '../../components';
 import { deepDiffMapper } from '../../utils/transform';
@@ -34,7 +35,7 @@ export default ({ pageData }) => {
   };
 
   useEffect(() => {
-    const relevantData = pageData[window.location.pathname];
+    const relevantData = get(pageData, `[${window.location.pathname}][0]`);
     if (relevantData && Object.keys(deepDiffMapper.map(relevantData, localDataCopy)).length > 0) {
       updateLocalDataCopy(relevantData);
     }

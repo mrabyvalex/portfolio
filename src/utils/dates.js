@@ -7,3 +7,5 @@ export const checkIfPastTime = (hour = 0, minute = 0) => {
 
   return moment().isAfter(dateToCheck);
 };
+
+export const parseDate = (dateString, format = 'lll') => (dateString && moment(dateString).format(format)) || '';

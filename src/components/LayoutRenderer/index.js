@@ -4,15 +4,15 @@ import DraggableContainer from '../DraggableContainer';
 import DummyComponent from '../DummyComponent';
 
 const LayoutRenderer = ({ data }) => {
-  const renderElement = (key) => {
+  const renderElement = (key, index) => {
     const item = data.nodes[key];
     return (
-      <DraggableContainer draggableId={key} key={key} index={item.index}>
+      <DraggableContainer draggableId={key} key={key} index={index}>
         <DummyComponent title={item.title} />
       </DraggableContainer>
     );
   };
-  return <div>{get(data, 'entry', []).map((key) => renderElement(key))}</div>;
+  return <div>{get(data, 'entry', []).map((key, index) => renderElement(key, index))}</div>;
 };
 
 export default LayoutRenderer;

@@ -4,16 +4,21 @@ const INTIAL_STORE_STATE = {
   loading: false,
   headerData: {},
   pageData: {
-    '/a': {
-      entry: ['0'],
-      mapping: {},
-      nodes: {
-        '0': {
-          title: 'component1',
-          index: 0
+    '/a': [
+      {
+        meta: {
+          pageTitle: 'aaa',
+          docTitle: 'v1'
+        },
+        entry: ['0'],
+        mapping: {},
+        nodes: {
+          '0': {
+            title: 'component1'
+          }
         }
       }
-    }
+    ]
   }
 };
 
